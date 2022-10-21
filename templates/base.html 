@@ -1,0 +1,31 @@
+{% load static mix %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% mix 'css/main.css' 'staticfiles' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div id="page" class="page">
+        <div class="container">
+            <div class="page__content">
+                <main id="main" class="main">
+                     {% include 'employee/content.html' %}
+                </main>
+                <aside id="sidebar" class="sidebar">
+                    {% include 'employee/aside.html' %}
+                </aside>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{% mix 'js/manifest.js' 'staticfiles' %}"></script>
+    <script src="{% mix 'js/vendor.js' 'staticfiles' %}"></script>
+    <script src="{% mix 'js/main.js' 'staticfiles' %}"></script>
+</body>
+</html>

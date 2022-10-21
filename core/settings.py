@@ -4,6 +4,7 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+print(BASE_DIR)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = CONFIG.django_secret_key
@@ -26,6 +27,7 @@ INSTALLED_APPS = [
     # libraries
     'corsheaders',
     'mptt',
+    'djangomix',
     # apps
     'employee.apps.EmployeeConfig'
 ]
@@ -45,7 +47,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,0 +1,7 @@
+@mixin transition(
+  $prop: map-get($transition, prop),
+  $duration: map-get($transition, duration),
+  $animation: map-get($transition, animation),
+) {
+  transition: $prop $duration $animation;
+}

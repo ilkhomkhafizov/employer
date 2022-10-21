@@ -6,11 +6,11 @@ from employee.management.data_generator.generator_factory import GeneratorFactor
 from employee.models import Department, Employee
 
 DEPARTMENTS = GeneratorFactory.generate('department', 20).get_data()
-SUBDIVISIONS = GeneratorFactory.generate('department', 40).get_data()
-SUBDIVISIONS_2 = GeneratorFactory.generate('department', 40).get_data()
-SUBDIVISIONS_3 = GeneratorFactory.generate('department', 40).get_data()
-SUBDIVISIONS_4 = GeneratorFactory.generate('department', 40).get_data()
-SUBDIVISIONS_5 = GeneratorFactory.generate('department', 40).get_data()
+SUBDIVISIONS = GeneratorFactory.generate('city', 40).get_data()
+SUBDIVISIONS_2 = GeneratorFactory.generate('address', 40).get_data()
+SUBDIVISIONS_3 = GeneratorFactory.generate('phrase', 40).get_data()
+SUBDIVISIONS_4 = GeneratorFactory.generate('bank', 40).get_data()
+SUBDIVISIONS_5 = GeneratorFactory.generate('automotive', 40).get_data()
 
 
 class Provider(faker.providers.BaseProvider):

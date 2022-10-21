@@ -1,0 +1,59 @@
+.sidebar {
+  @include lg-u {
+    width: 500px;
+  }
+
+  &__content {
+    height: 100%;
+  }
+}
+
+.widget {
+  display: block;
+  border-left: 1px solid var(--border-color);
+  padding-left: 30px;
+
+  &:last-of-type {
+    position: sticky;
+    top: 30px;
+  }
+}
+
+
+.categories {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .categories__list {
+      padding-left: 20px;
+      border-left: 1px solid var(--border-color);
+      margin-bottom: 20px;
+      font-size: .85em;
+    }
+  }
+  &__item {
+    display: block;
+  }
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted-color);
+    text-decoration: none;
+    padding: .5em 0;
+    line-height: 1.3;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    @include transition;
+
+    &:hover {
+      color: var(--color);
+      border-color: var(--border-color);
+    }
+
+    &.active {
+      color: var(--theme-color);
+    }
+  }
+}
