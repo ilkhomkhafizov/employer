@@ -1,5 +1,6 @@
 from pathlib import Path
 from core.config import CONFIG
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -116,6 +117,17 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
+
+# Root folder for static files for work with local
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+
+# Root folder for static files after collectstatic
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
