@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils import timezone
 from django.urls import reverse
 from mptt.models import MPTTModel, TreeForeignKey
 
@@ -23,7 +22,6 @@ class Employee(models.Model):
     employment_position = models.CharField(max_length=200)
     employment_start_date = models.DateField(auto_now_add=False)
     salary = models.IntegerField()
-    created_at = models.DateTimeField(auto_now_add=True)
     department = TreeForeignKey(Department, on_delete=models.PROTECT)
 
     def __str__(self):
