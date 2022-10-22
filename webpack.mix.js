@@ -29,7 +29,7 @@ mix.browserSync({
 })
 
 mix.autoload({
-    jquery: ['$', 'window.jQuery', 'jQuery']
+    jquery: ['$', 'window.jQuery', 'jQuery'],
 })
 
 mix.copyDirectory('src/static', 'staticfiles/static/')

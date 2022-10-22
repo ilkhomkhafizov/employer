@@ -11,7 +11,7 @@ class Department(MPTTModel):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('department', kwargs={'pk': self.pk})
+        return reverse('department_detail', kwargs={'pk': self.pk})
 
     class MPTTMeta:
         order_insertion_by = ['name']

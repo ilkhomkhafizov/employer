@@ -16,7 +16,7 @@
   flex-grow: 1;
 }
 
-.section_category {
+.section_employee {
   &__link {
     display: block;
     color: var(--theme-color);
@@ -31,6 +31,23 @@
     margin: 0;
     font-size: inherit;
     line-height: inherit;
+  }
+}
+
+.employee_list {
+  list-style: none;
+
+  &__item {
+    text-decoration: none;
+    line-height: 1;
+
+    h3 {
+      font-size: .65em;
+    }
+    p {
+      font-size: .55em;
+      color: var(--muted-color)
+    }
   }
 }
 

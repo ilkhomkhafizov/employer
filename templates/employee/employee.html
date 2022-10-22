@@ -1,5 +1,31 @@
 {% extends  'base.html '%}
+{% load mptt_tags %}
 
 {% block content %}
-    <h1>MAIN</h1>
+       <main id="main" class="main">
+            <section class="section_employee">
+
+            <ul class="employee_list">
+                   <h4>Сотрудники</h4>
+                {% for employee in department_detail %}
+                    <li class="employee_list__item">
+                        <h3>{{ employee.name }}</h3>
+                        <p>Salary: {{ employee.salary }} $ </p>
+                        <p>Employee position: {{ employee.employment_position }}</p>
+                        <p>Start date: {{ employee.employment_start_date }}</p>
+                    </li>
+                    <hr>
+
+                {% endfor %}
+            </ul>
+            </section>
+       </main>
+{% endblock %}
+
+{% block aside %}
+    {% include 'employee/aside.html' %}
+{% endblock %}
+
+{% block pagination %}
+    {% include 'employee/paginate.html' %}
 {% endblock %}

@@ -12,14 +12,16 @@
 <body>
     <div id="page" class="page">
         <div class="container">
+
             <div class="page__content">
-                <main id="main" class="main">
-                     {% include 'employee/content.html' %}
-                </main>
-                <aside id="sidebar" class="sidebar">
-                    {% include 'employee/aside.html' %}
-                </aside>
+               {% block content %}
+               {% endblock %}
+                {% block aside %}
+               {% endblock %}
+
             </div>
+        {% block pagination %}
+               {% endblock %}
         </div>
     </div>
 

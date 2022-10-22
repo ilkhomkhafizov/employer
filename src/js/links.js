@@ -17,15 +17,16 @@ export default class Links {
 
     _internal() {
         // Add active class to link
-        this.internalLinks.forEach(link => {
+        this.internalLinks.forEach((link, index) => {
             // Check if not in this.exclude
             if (link.classList.toString().split(/\s/).some(item => this.exclude.includes(item))) return
-
             let uri = link.getAttribute('href').split('?')[0]
             if (this.uri === uri) {
                 link.classList.add('active')
-                // If link has li as a parent element, add active class to li
-                if (link.parentElement.nodeName === 'LI') link.parentElement.classList.add('active')
+                let dropdownContent = link.nextElementSibling;
+                dropdownContent.style.display = "block";
+            } else if (this.uri === '/' && index === 0){
+                link.classList.add('active')
             }
         })
     }

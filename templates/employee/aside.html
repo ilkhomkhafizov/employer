@@ -1,76 +1,26 @@
- <aside id="sidebar" class="sidebar">
-     <div class="sidebar__content">
-         <div class="widget">
-             <nav class="categories">
-                <ul class="categories__list">
-                     <li class="categories__item">
-                         <a href="/" class="categories__link">
-                             <span>News</span>
-                             <span>10</span>
-                         </a>
-                         <ul class="categories__list">
-                            <li class="categories__item">
-                                 <a href="#" class="categories__link">
-                                     <span>News 1</span>
-                                     <span>10</span>
-                                 </a>
-                                <ul class="categories__list">
-                                    <li class="categories__item">
-                                         <a href="#" class="categories__link">
-                                             <span>News 2</span>
-                                             <span>10</span>
-                                         </a>
-                                        <ul class="categories__list">
-                                            <li class="categories__item">
-                                                 <a href="#" class="categories__link">
-                                                     <span>News 3</span>
-                                                     <span>10</span>
-                                                 </a>
-                                             </li>
-                                        </ul>
-                                     </li>
-                                </ul>
-                             </li>
-                            <li class="categories__item">
-                                 <a href="#" class="categories__link">
-                                     <span>Cloud</span>
-                                     <span>10</span>
-                                 </a>
-                             </li>
-                            <li class="categories__item">
-                                 <a href="#" class="categories__link">
-                                     <span>Product</span>
-                                     <span>10</span>
-                                 </a>
-                             </li>
-                            <li class="categories__item">
-                             <a href="#" class="categories__link">
-                                 <span>Community</span>
-                                 <span>10</span>
-                             </a>
-                         </li>
-                </ul>
-                     </li>
-                    <li class="categories__item">
-                         <a href="#" class="categories__link">
-                             <span>Cloud</span>
-                             <span>10</span>
-                         </a>
-                     </li>
-                    <li class="categories__item">
-                         <a href="#" class="categories__link">
-                             <span>Product</span>
-                             <span>10</span>
-                         </a>
-                     </li>
-                    <li class="categories__item">
-                     <a href="#" class="categories__link">
-                         <span>Community</span>
-                         <span>10</span>
+{% load mptt_tags %}
+
+<aside id="sidebar" class="sidebar">
+    <div class="sidebar__content">
+        <div class="widget">
+        <h4>Подразделении</h4>
+         <nav class="categories">
+            <ul class="categories__list">
+                {% recursetree departments %}
+                <li class="categories__item">
+                    <a class="categories__link" href={% url 'department_detail' node.id %} >
+                         {{ node.name }}
                      </a>
-                 </li>
-                </ul>
-             </nav>
-         </div>
+
+                    {% if not node.is_leaf_node %}
+                        <ul class="categories__list child">
+                            {{ children }}
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endrecursetree %}
+            </ul>
+         </nav>
      </div>
- </aside>
+ </div>
+</aside>
