@@ -4,14 +4,13 @@
     <div class="sidebar__content">
         <div class="widget">
         <h4>Подразделении</h4>
-         <nav class="categories">
-            <ul class="categories__list">
+        <nav class="categories">
+            <ul class="categories__list first">
                 {% recursetree departments %}
-                <li class="categories__item">
+                <li class="categories__item parent" aria-labelledby="dropdownMenuButton">
                     <a class="categories__link" href={% url 'department_detail' node.id %} >
                          {{ node.name }}
                      </a>
-
                     {% if not node.is_leaf_node %}
                         <ul class="categories__list child">
                             {{ children }}

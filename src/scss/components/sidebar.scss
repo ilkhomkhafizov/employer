@@ -32,9 +32,6 @@
       margin-bottom: 20px;
       font-size: .85em;
 
-      .child {
-        display: none;
-      }
     }
   }
   &__item {
@@ -60,4 +57,10 @@
       color: var(--theme-color);
     }
   }
+}
+.categories__list > .categories__item.parent > .categories__list.child  {
+  display: none;
+}
+.categories__list.child > .categories__item.parent > .categories__list.child  {
+  display: block;
 }

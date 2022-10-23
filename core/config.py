@@ -13,6 +13,7 @@ class Config:
         self.debug = config('debug', bool)
         self.allowed_hosts = config('allowed_hosts', cast=Csv())
         self.cors_origins = config('cors_origins', cast=Csv())
+        self.csrf_trusted = config('csrf_trusted', cast=Csv())
         # DB
         self.db_host = config('db_host', cast=str)
         self.db_name = config('db_name', cast=str)

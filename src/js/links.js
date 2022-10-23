@@ -23,10 +23,17 @@ export default class Links {
             let uri = link.getAttribute('href').split('?')[0]
             if (this.uri === uri) {
                 link.classList.add('active')
-                let dropdownContent = link.nextElementSibling;
-                dropdownContent.style.display = "block";
+                if (link.parentElement?.parentElement?.classList.contains("first")
+                        && link.parentElement.parentElement.nodeName === 'UL') {
+                    localStorage.setItem('selectedItemIndex', index);
+                }
             } else if (this.uri === '/' && index === 0){
                 link.classList.add('active')
+                localStorage.setItem('selectedItemIndex', index);
+            }
+            let selectedItemIndex = localStorage.getItem('selectedItemIndex')
+            if (selectedItemIndex && selectedItemIndex == index) {
+                link.parentElement.classList.remove('parent')
             }
         })
     }
