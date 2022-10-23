@@ -1,7 +1,7 @@
 const mix = require('laravel-mix')
 
 mix.disableNotifications()
-mix.setPublicPath('staticfiles')
+mix.setPublicPath('static')
 mix.sourceMaps(false, 'source-map')
 mix.extract()
 mix.version()
@@ -32,7 +32,7 @@ mix.autoload({
     jquery: ['$', 'window.jQuery', 'jQuery'],
 })
 
-mix.copyDirectory('src/static', 'staticfiles/static/')
+mix.copyDirectory('src/static', 'static/')
 
 mix.js('src/js/main.js', 'js')
 

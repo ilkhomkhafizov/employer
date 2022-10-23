@@ -4,8 +4,8 @@
   "description": "interview task",
   "main": "index.js",
   "scripts": {
-    "dev": "rm -rf staticfiles/static/* && npx mix watch --hot",
-    "build": "rm -rf staticfiles/static/* && npx mix production"
+    "dev": "rm -rf static/* && npx mix watch --hot",
+    "build": "rm -rf static/* && npx mix --production"
   },
   "repository": {
     "type": "git",
@@ -31,5 +31,8 @@
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.55.0",
     "sass-loader": "^12.6.0"
+  },
+  "dependencies": {
+    "postcss-combine-duplicated-selectors": "^10.0.3"
   }
 }
